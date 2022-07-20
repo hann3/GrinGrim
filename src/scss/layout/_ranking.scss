@@ -62,13 +62,31 @@
 
 .ranking-subject {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
   margin: rem(100px) auto;
+}
+.buttonContainer {
+  width: 100%;
+}
+.prev {
+  position: absolute;
+  bottom: 50%;
+  left: 0;
+}
+
+.next {
+  position: absolute;
+  bottom: 50%;
+  right: 0;
 }
 
 .prev,
 .next {
-  width: 50px;
-  height: 50px;
+  font-size: 48px;
+  font-weight: bold;
+  box-shadow: none;
+  color: rgb(255, 151, 4);
+  background-color: transparent;
   vertical-align: middle;
 }
