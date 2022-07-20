@@ -20,7 +20,7 @@ const routes = [
 const getComponent = path =>
   (routes.find(route => route.path === path) || routes.find(route => route.path === '**')).component();
 
-const getNeedAuth = path => routes.find(route => route.path === path).needAuth || false;
+const getNeedAuth = path => routes.find(route => route.path === path)?.needAuth || false;
 
 const router = async (el, path, query) => {
   const needAuth = getNeedAuth(path);

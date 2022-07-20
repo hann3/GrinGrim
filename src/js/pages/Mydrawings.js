@@ -3,8 +3,8 @@ import axios from 'axios';
 export default () => ({
   async getData() {
     const { data: userId } = await axios.get('/auth');
-    const { data: categories } = await axios.get('/category');
     const { data: mydrawings } = await axios.get(`/drawings/userid/${userId}`);
+    const { data: categories } = await axios.get('/category');
 
     const getCategoryName = categoryId => categories.find(({ id }) => id === categoryId).name;
     const mydrawingsWithCategoryName = mydrawings.map(mydrawing => ({

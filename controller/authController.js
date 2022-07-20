@@ -38,10 +38,10 @@ export const checkId = (req, res) => {
 export const signUp = (req, res) => {
   try {
     const { userId, password, nickName } = req.body;
-    const { path: userImage } = req.file;
+    const { path: profile } = req.file;
     const id = generateUserId();
     const hashedPassword = bcrypt.hashSync(password, 10);
-    addNewUser({ id, userId, password: hashedPassword, nickName, userImage });
+    addNewUser({ id, userId, password: hashedPassword, nickName, profile });
 
     const accessToken = createToken(id);
     setTokenInCookie(res, accessToken);
